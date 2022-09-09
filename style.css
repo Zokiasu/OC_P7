@@ -1,0 +1,314 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+html::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #C7BEBE;
+  border-radius: 5px;
+}
+
+main {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1280px;
+}
+
+@media screen and (max-width: 1280px) {
+	main {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+}
+
+main > header {
+  text-align: center;
+  margin-top: 2.5em;
+  margin-bottom: 0.7em;
+}
+
+main > header > #logo > img {
+  transform: scale(0.5);
+  width: 18rem;
+  transition: all 1s;
+}
+
+main > header > aside {
+  margin-top: 1em;
+  text-align: left;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+main > header > aside > .searchContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #E7E7E7;
+	border-radius: 0.2rem;
+  padding: 1rem;
+}
+
+main > header > aside > .searchContainer > #search {
+	background-color: #E7E7E7;
+  width: 100%;
+  font-family: "Lato";
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+
+main > header > aside > #searchContainer > #search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+main > header > aside > .fa-search {
+  position: absolute;
+  right: 7%;
+  margin-top: -1.45em;
+  font-size: 1.8em;
+  display: none;
+}
+
+main > header > aside > #tagList > div {
+  display: inline-block;
+}
+
+main > header > aside > #tagList > div > .tag {
+  width: max-content;
+  display: inline-block;
+  border-radius: 4px;
+  color: white;
+  padding: 0.7em;
+  padding-left: 1.2em;
+  padding-right: 1.35em;
+  margin-right: 0.5em;
+  margin-bottom: -0.5em;
+  font-size: 0.6em;
+  font-family: "Lato";
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+main > header > aside > #tagList > div > .tag > .fa-times-circle {
+  margin-left: 0.5em;
+  font-size: 1.2em;
+  transition: all 1.5s;
+}
+
+main > header > aside > #tagList > div > .tag > .fa-times-circle:hover, 
+main > header > aside > #tagList > div > .tag > .fa-times-circle:active, 
+main > header > aside > #tagList > div > .tag > .fa-times-circle:focus {
+  transform: rotate(472deg);
+}
+
+main > header > aside > #tagList > div > .tagIngredient {
+  background: #3282F7;
+}
+
+main > header > aside > #tagList > div > .tagAppareil {
+  background: #68D9A4;
+}
+
+main > header > aside > #tagList > div > .tagUstensile {
+  background: #ED6454;
+}
+
+main > header > aside > .listField {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  background: #3282F7;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+main > header > aside > .listField > span > input {
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+  width: auto;
+  font-family: "Lato";
+  font-weight: 600;
+}
+
+main > header > aside > .listField > span > input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+main > header > aside > .listField > span > input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+main > header > aside > .listField .fa-chevron-up {
+  transform: rotate(180deg);
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+main > header > aside > .listField > .list {
+  display: none;
+  overflow: auto;
+  width: 100%;
+  height: 90%;
+  margin-top: 1.5em;
+  flex-wrap: wrap;
+  align-content: space-between;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+main > header > aside > .listField > .list::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+main > header > aside > .listField > .list > span {
+  margin-bottom: 0.65em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+main > header > aside > #ingredientField {
+  background: #3282F7;
+}
+
+main > header > aside > #ingredientField > #ingredientList::-webkit-scrollbar-thumb {
+  background: #0060ec;
+  border-radius: 5px;
+}
+
+main > header > aside > #ingredientField > #ingredientList > span:hover, 
+main > header > aside > #ingredientField > #ingredientList > span:active, 
+main > header > aside > #ingredientField > #ingredientList > span:focus {
+  color: #0050c9;
+}
+
+main > header > aside > #appareilField {
+  background: #68D9A4;
+}
+
+main > header > aside > #appareilField > #appareilList::-webkit-scrollbar-thumb {
+  background: #469e75;
+  border-radius: 5px;
+}
+
+main > header > aside > #appareilField > #appareilList > span:hover, 
+main > header > aside > #appareilField > #appareilList > span:active, 
+main > header > aside > #appareilField > #appareilList > span:focus {
+  color: #3e8f69;
+}
+
+main > header > aside > #ustensilField {
+  background: #ED6454;
+  margin-bottom: 0.3em;
+}
+
+main > header > aside > #ustensilField > #ustensilList::-webkit-scrollbar-thumb {
+  background: #d74938;
+  border-radius: 5px;
+}
+
+main > header > aside > #ustensilField > #ustensilList > span:hover, 
+main > header > aside > #ustensilField > #ustensilList > span:active, 
+main > header > aside > #ustensilField > #ustensilList > span:focus {
+  color: #bb3c2e;
+}
+
+
+
+main > section {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	gap: 3rem;
+	margin-top: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+main > section > article {
+  background: #C7BEBE;
+  transition: all 0.5s;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-family: "Lato";
+  font-size: 0.8em;
+  font-weight: 600;
+  overflow: hidden;
+  position: relative;
+}
+
+main > section > article:hover, main > section > article:active, main > section > article:focus {
+  box-shadow: 0px 0px 5px 1px #0000001f;
+}
+
+main > section > article > aside {
+	background-color: #E7E7E7;
+  margin-top: 13rem;
+  padding: 1rem;
+	height: 10rem;
+}
+
+main > section > article > aside > .recipeHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+main > section > article > aside > .recipeHeader > h2 {
+	font-size: 1rem;
+	font-weight: 900;
+}
+
+main > section > article > aside > .recipeHeader > p {
+	font-weight: 700;
+	font-size: 0.75rem;
+}
+
+main > section > article > aside > .recipeDetails {
+	font-size: 0.7rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem;
+	text-align: left;
+	margin-top: 0.5rem;
+}
+
+main > section > article > aside > .recipeDetails > .description {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
+
+main > section > #searchFailed {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8.5%;
+  text-align: center;
+}
+
+main > section > #searchFailed > span {
+  font-family: "Lato";
+  color: #d04f4f;
+  font-weight: 600;
+  font-size: 1.6em;
+}

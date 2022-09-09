@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Les petits plats - Retrouvez nos meilleures recettes de cuisine" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">    
+    <title>Les petits plats - Nos meilleures recettes de cuisine</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <a id="logo" href="index.html">
+				<img src="./assets/logo.png" alt="Logo les petits plats" />
+            </a>
+            <aside>
+                <div class="searchContainer">
+                    <input 
+                        id="search"
+                        type="search"
+                        name="search"
+                        autocomplete='off'
+                        placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+                        aria-label="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+                    />
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <div id="tagList">
+                    <div id="ingredientTagList"></div>
+                    <div id="appareilTagList"></div>
+                    <div id="ustensilTagList"></div>
+                </div>
+
+                <div id="ingredientField" class="listField" tabindex="0">
+                    <span class="ingredientFieldSpan">Ingédients</span>
+                    <i class="fas fa-chevron-up"></i>
+                    <div id="ingredientList" class="list"></div>
+                </div>
+                <div id="appareilField" class="listField" tabindex="0">
+                    <span class="appareilFieldSpan">Appareils</span>
+                    <i class="fas fa-chevron-up"></i>
+                    <div id="appareilList" class="list"></div>
+                </div>
+                <div id="ustensilField" class="listField" tabindex="0">
+                    <span class="ustensilFieldSpan">Ustensiles</span>
+                    <i class="fas fa-chevron-up"></i>
+                    <div id="ustensilList" class="list"></div>
+                </div>
+
+            </aside>
+        </header>
+
+		<section id="recipeList"></section>	
+        	
+    </main>
+    <script async type="module" src="./javascript/index.js"></script>
+</body>
+
+</html>
