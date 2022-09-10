@@ -1,15 +1,15 @@
 const factories = () => {
-	let arrayRecettes = [];
+	let recipeArray = [];
 	let arrayOrigineRecettes = [];
-	let arrayIngredients = [];
+	let ingredientArray = [];
 	let arrayTagIngredients = [];
-	let arrayAppareils = [];
+	let equipmentArray = [];
 	let arrayTagAppareils = [];
-	let arrayUstensils = [];
+	let ustensilArray = [];
 	let arrayTagUstensils = [];
 	
 	/**
-	 * initRecettes - initialise les données de la recette dans le tableau arrayRecettes
+	 * initRecettes - initialise les données de la recette dans le tableau recipeArray
 	 * @param  {Int} id id de la recette
 	 * @param  {String} name nom de la recette
 	 * @param  {Int} servings nombre de personne qui peuvent être servies
@@ -20,7 +20,7 @@ const factories = () => {
 	 * @param  {Array} ustensils ustensile utilisé
 	 */
 	const initRecettes = (id, name, servings, ingredients, time, description, appliance, ustensils) => {
-		arrayRecettes.push({ id, name, servings, ingredients, time, description, appliance, ustensils });
+		recipeArray.push({ id, name, servings, ingredients, time, description, appliance, ustensils });
 	};
 
 	/**
@@ -28,7 +28,7 @@ const factories = () => {
 	 * @param  {Array} ingredient ingrédients de la recette
 	 */
 	const initIngredient = (ingredient) => {
-		arrayIngredients.push(ingredient);
+		ingredientArray.push(ingredient);
 	};
 
 	/**
@@ -37,6 +37,7 @@ const factories = () => {
 	 */
 	const initTagIngredient = (tagIngredient) => {
 		arrayTagIngredients.push(tagIngredient);
+			
 	};
 
 	/**
@@ -44,7 +45,7 @@ const factories = () => {
 	 * @param  {String} appareil appareil de la recette
 	 */
 	const initAppareil = (appareil) => {
-			arrayAppareils.push(appareil);
+		equipmentArray.push(appareil);
 	};
 
 	/**
@@ -60,7 +61,7 @@ const factories = () => {
 	 * @param  {Array} ustensil ustensils de la recette
 	 */
 	const initUstensil = (ustensil) => {
-		arrayUstensils.push(ustensil);
+		ustensilArray.push(ustensil);
 	};
 
 	/**
@@ -72,11 +73,11 @@ const factories = () => {
 	};
 
 	/**
-	 * setRecettes - entre les recettes filtreés dans le tableau arrayRecettes
+	 * setRecettes - entre les recettes filtreés dans le tableau recipeArray
 	 * @param  {Array} dataRecettes tableau contenant les recettes filtrées 
 	 */
 	const setRecettes = (dataRecettes) => {
-		arrayRecettes = dataRecettes;
+		recipeArray = dataRecettes;
 	};
 	
 	/**
@@ -92,7 +93,7 @@ const factories = () => {
 	 * @param  {Array} dataIngredients tableau contenant les ingrédients filtrées 
 	 */
 	const setIngredient = (dataIngredients) => {
-		arrayIngredients = dataIngredients;
+		ingredientArray = dataIngredients;
 	};
 
 	/**
@@ -104,11 +105,11 @@ const factories = () => {
 	};
 
 	/**
-	 * setAppareil - entre les appareils filtreés dans le tableau arrayAppareils
+	 * setAppareil - entre les appareils filtreés dans le tableau equipmentArray
 	 * @param  {Array} dataAppareils tableau contenant les appareils filtrées 
 	 */
 	const setAppareil = (dataAppareils) => {
-		arrayAppareils = dataAppareils;
+		equipmentArray = dataAppareils;
 	};
 	
 	/**
@@ -120,11 +121,11 @@ const factories = () => {
 	};
 
 	/**
-	 * setUstensil - entre les ustensils filtreés dans le tableau arrayUstensils
+	 * setUstensil - entre les ustensils filtreés dans le tableau ustensilArray
 	 * @param  {Array} dataUstensils tableau contenant les ustensils filtrées 
 	 */
 	const setUstensil = (dataUstensils) => {
-		arrayUstensils = dataUstensils;
+		ustensilArray = dataUstensils;
 	};
 			
 	/**
@@ -136,11 +137,11 @@ const factories = () => {
 	};
 
 	/**
-	 * getRecettes - retourne le tableau arrayRecettes
-	 * @return  {Array} arrayRecettes contenant les recettes 
+	 * getRecettes - retourne le tableau recipeArray
+	 * @return  {Array} recipeArray contenant les recettes 
 	 */
 	const getRecettes = () => {
-		return arrayRecettes;
+		return recipeArray;
 	};
 	
 	/**
@@ -148,15 +149,15 @@ const factories = () => {
 	 * @return  {Array} arrayOrigineRecettes contenant les recettes 
 	 */
 	const getOrigineRecettes = () => {
-			return arrayOrigineRecettes;
+		return arrayOrigineRecettes;
 	};
 	
 	/**
-	 * getIngredients - retourne le tableau arrayIngredients
-	 * @return  {Array} arrayIngredients contenant les ingrédients des recettes 
+	 * getIngredients - retourne le tableau ingredientArray
+	 * @return  {Array} ingredientArray contenant les ingrédients des recettes 
 	 */
 	const getIngredients = () => {
-		return arrayIngredients;
+		return ingredientArray;
 	};
 	
 	/**
@@ -168,11 +169,11 @@ const factories = () => {
 	};
 	
 	/**
-	 * getAppareils - retourne le tableau arrayAppareils
-	 * @return  {Array} arrayAppareils contenant les appareils des recettes 
+	 * getAppareils - retourne le tableau equipmentArray
+	 * @return  {Array} equipmentArray contenant les appareils des recettes 
 	 */
 	const getAppareils = () => {
-		return arrayAppareils;
+		return equipmentArray;
 	};
 			
 	/**
@@ -184,11 +185,11 @@ const factories = () => {
 	};
 
 	/**
-	 * getUstensils - retourne le tableau arrayUstensils
-	 * @return  {Array} arrayUstensils contenant les ustensils des recettes 
+	 * getUstensils - retourne le tableau ustensilArray
+	 * @return  {Array} ustensilArray contenant les ustensils des recettes 
 	 */
 	const getUstensils = () => {
-		return arrayUstensils;
+		return ustensilArray;
 	};
 			
 	/**
@@ -196,115 +197,79 @@ const factories = () => {
 	 * @return  {Array} arrayTagUstensils contenant les tags ustensils des recettes ajoutées 
 	 */
 	const getTagUstensils = () => {
-		return arrayTagUstensils;
+			return arrayTagUstensils;
 	};
 
 	/**
-	 * recipesSearch - filtre le tableau arrayRecettes en function de la valeur search passée
+	 * recipesSearch - filtre le tableau recipeArray en fonction de la valeur search
 	 * @param  {String} search valeur passée dans la barre de recherche
-	 * @returns {Array} renvoie le tableau resultSearch contenant les recettes correspondant à la recherche
-	 */
+	 * @returns {Array} renvoie un tableau contenant les recettes correspondant à la recherche
+	**/
 	const recipesSearch = (search) => {
-		let resultSearch = [];
-		for (let i = 0; i < arrayRecettes.length; i++) {
-			if (arrayRecettes[i].name.toLowerCase().includes(search)) {
-				resultSearch.push(arrayRecettes[i]);
-			}
-			for (let y = 0; y < arrayRecettes[i].ingredients.length; y++) {
-				if (arrayRecettes[i].ingredients[y].ingredient.toLowerCase().includes(search)) {
-					resultSearch.push(arrayRecettes[i]);
-				}
-			}
-			if (arrayRecettes[i].description.toLowerCase().includes(search)) {
-				resultSearch.push(arrayRecettes[i]);
-			}
-		}
-		return resultSearch = Array.from(new Set(resultSearch));
+		return recipeArray.filter((recette) => { //On réalise un parcours unique de la boucle principal en appliquant un filtre
+			return recette.name.toLowerCase().includes(search.toLowerCase()) || // Si la recherche correspond au nom de la recette on l'ajoute au tableau
+			recette.ingredients.filter((ingredient) => ingredient.ingredient.toLowerCase().includes(search.toLowerCase())).length > 0 ||  // Si la recherche correspond à un ingrédient de la recette on l'ajoute au tableau
+			recette.ustensils.filter((ustensil) => ustensil.toLowerCase().includes(search.toLowerCase())).length > 0 || // Si la recherche correspond à un ustensil de la recette on l'ajoute au tableau
+			recette.description.toLowerCase().includes(search.toLowerCase()) || // Si la recherche correspond à la description de la recette on l'ajoute au tableau
+			recette.appliance.toLowerCase().includes(search.toLowerCase()); // Si la recherche correspond à l'appareil de la recette on l'ajoute au tableau
+		});
 	};
 	
 	/**
-	 * ingredientSearchFilter - filtre le tableau arrayIngredients en function de la valeur search passée
+	 * ingredientSearchFilter - filtre le tableau ingredientArray en fonction de la valeur search
 	 * @param  {String} search valeur passée dans la barre de recherche
-	 * @returns {Array} renvoie le tableau resultSearch contenant les résultats filtrés
+	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const ingredientSearchFilter = (search) => {
-		let resultSearch = [];
-		for (let i = 0; i < arrayIngredients.length; i++) {
-			if (arrayIngredients[i].toLowerCase().includes(search)) resultSearch.push(arrayIngredients[i]);
-		}
-		return resultSearch;
+		return ingredientArray.filter((ingredient) => ingredient.toLowerCase().includes(search.toLowerCase()));
 	};
 
 	/**
-	 * recipeFilteredByIngredients - filtre le tableau arrayRecettes en function des valeurs dans le tableau arrayTagIngredients
+	 * recipeFilteredByIngredients - filtre le tableau la liste en argument en fonction de la valeur du tag passé en argument
 	 * @param  {Array} array tableau contenant les recettes a filtrer
 	 * @param  {String} tagIngredient valeur tag ingrédient
-	 * @returns {Array} renvoie le tableau resultSearch contenant les résultats filtrés
+	 * @returns {Array} renvoie un tableau contenant les recettes filtrés avec l'ingredient choisi
 	 */
 	const recipeFilteredByIngredients = (array, tagIngredient) => {
-		let resultSearch = [];
-		for (let i = 0; i < array.length; i++) {
-			for (let y = 0; y < array[i].ingredients.length; y++) {
-				if (array[i].ingredients[y].ingredient.toLowerCase().includes(tagIngredient)) resultSearch.push(array[i]);
-			}
-		}
-		return resultSearch;
+		return array.filter((array) => array.ingredients.filter((ingredient) => ingredient.ingredient.toLowerCase().includes(tagIngredient.toLowerCase())).length > 0);
 	};
 	
 	/**
-	 * appareilSearchFilter - filtre le tableau arrayAppareils en function de la valeur search passée
+	 * equipmentSearchFilter - filtre le tableau equipmentArray en fonction de la valeur search
 	 * @param  {String} search valeur passée dans la barre de recherche
-	 * @returns {Array} renvoie le tableau resultSearch contenant les résultats filtrés
+	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
-	const appareilSearchFilter = (search) => {
-		let resultSearch = [];
-		for (let i = 0; i < arrayAppareils.length; i++) {
-			if (arrayAppareils[i].toLowerCase().includes(search)) resultSearch.push(arrayAppareils[i]);
-		}
-		return resultSearch;
+	const equipmentSearchFilter = (search) => {
+		return equipmentArray.filter((equipment) => equipment.toLowerCase().includes(search.toLowerCase()));
 	};
 	
 	/**
-	 * recipeFilteredByAppareil - filtre le tableau arrayAppareils en function des valeurs dans le tableau arrayTagAppareils
+	 * recipeFilteredByAppareil - filtre le tableau la liste en argument en fonction de la valeur du tag passé en argument
 	 * @param  {Array} array tableau contenant les recettes a filtrer
 	 * @param  {String} tagAppareil valeur tag appareil
-	 * @returns {Array} renvoie le tableau resultSearch contenant les résultats filtrés
+	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const recipeFilteredByAppareil = (array, tagAppareil) => {
-		let resultSearch = [];
-		for (let i = 0; i < array.length; i++) {
-			if (array[i].appliance.toLowerCase().includes(tagAppareil)) resultSearch.push(array[i]);
-		}
-		return resultSearch;
+		return array.filter((array) => array.appliance.toLowerCase().includes(tagAppareil.toLowerCase()));
 	};
 	
 	/**
-	 * ustensilSearchFilter - filtre le tableau arrayUstensils en function de la valeur search passée
+	 * ustensilSearchFilter - filtre le tableau ustensilArray en fonction de la valeur search
 	 * @param  {String} search valeur passée dans la barre de recherche
-	 * @returns {Array} renvoie le tableau resultSearch contenant les résultats filtrés
+	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const ustensilSearchFilter = (search) => {
-		let resultSearch = [];
-		for (let i = 0; i < arrayUstensils.length; i++) {
-			if (arrayUstensils[i].toLowerCase().includes(search)) resultSearch.push(arrayUstensils[i]);
-		}
-		return resultSearch;
+		return ustensilArray.filter((ustensil) => ustensil.toLowerCase().includes(search.toLowerCase()));
 	};
 
 	/**
-	 * recipeFilteredByUstensil - filtre le tableau arrayUstensils en function des valeurs dans le tableau arrayTagUstensils
+	 * recipeFilteredByUstensil - filtre le tableau la liste en argument en fonction de la valeur du tag passé en argument
 	 * @param  {Array} array tableau contenant les ustensils a filtrer
 	 * @param  {String} tagIngredient valeur tag ustensil
-	 * @returns {Array} renvoie le tableau resultSearch contenant les résultats filtrés
+	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const recipeFilteredByUstensil = (array, tagUstensil) => {
-		let resultSearch = [];
-		for (let i = 0; i < array.length; i++) {
-			for (let y = 0; y < array[i].ustensils.length; y++) {
-				if (array[i].ustensils[y].toLowerCase().includes(tagUstensil)) resultSearch.push(array[i]);
-			}
-		}
-		return resultSearch;
+		return array.filter((array) => array.ustensils.filter((ustensil) => ustensil.toLowerCase().includes(tagUstensil.toLowerCase())).length > 0);
 	};
 	
 	return {
@@ -334,7 +299,7 @@ const factories = () => {
 		recipesSearch,
 		ingredientSearchFilter,
 		recipeFilteredByIngredients,
-		appareilSearchFilter,
+		equipmentSearchFilter,
 		recipeFilteredByAppareil,
 		ustensilSearchFilter,
 		recipeFilteredByUstensil
