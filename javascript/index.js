@@ -2,17 +2,14 @@ import recipes from './recipes.js';
 import factories from './factories.js';
 
 const factory = factories();
-const header = document.querySelector('header > aside');
-const section = document.querySelector('section');
-
+const section1 = document.querySelector('header > aside');
+const section2 = document.querySelector('section');
 const divIngredient = document.querySelector('#ingredientField');
 const divAppareil = document.querySelector('#equipmentField');
 const divUstensile = document.querySelector('#ustensilField');
-
 const idListIngredient = document.querySelector('#ingredientList');
 const idListAppareil = document.querySelector('#equipmentList');
 const idListUstensil = document.querySelector('#ustensilList');
-
 const recipesSearch = document.querySelector('#search');
 const arrayEvent = ['click', 'keypress'];
 
@@ -86,14 +83,14 @@ const initHtmlRecettes = (data = false) => {
  */
 const displayListRecettes = (htmlRecettes) => {
     let icone = document.querySelector('header > a > img:nth-of-type(1)');
-    if (htmlRecettes.length !== 0) section.innerHTML = htmlRecettes;
-    else section.innerHTML = '<div id="searchFailed"><span>Aucune recette ne correspond à votre critère…<br>Vous pouvez chercher « tarte aux pommes », « poisson », etc.</span></div>';
+    if (htmlRecettes.length !== 0) section2.innerHTML = htmlRecettes;
+    else section2.innerHTML = '<div id="searchFailed"><span>Aucune recette ne correspond à votre critère…<br>Vous pouvez chercher « tarte aux pommes », « poisson », etc.</span></div>';
     icone.style.marginLeft = '0em';
     icone.style.marginBottom = '0.5em';
     icone.style.transform = 'rotate(0deg)  scale(1)';
     setTimeout(() => {
-        header.style.opacity = 1;
-        section.style.opacity = 1;
+        section1.style.opacity = 1;
+        section2.style.opacity = 1;
     }, 1000);
 };
 
@@ -185,7 +182,7 @@ const handleDivList = () => {
                 if(element.style.width === '87px') {
                     // On ferme tous les listField
                     for (let i = 0; i < 3; i++) {
-                        let listField = header.querySelectorAll('.listField')[i];
+                        let listField = section1.querySelectorAll('.listField')[i];
                         listField.style.width = '87px';
                         listField.style.minWidth = 'initial';
                         listField.style.height = '19.7px';
@@ -323,7 +320,7 @@ const spliceTagIngredient = () => {
 };
 
 /**
- * handleAppareilSearchFilter - crécupère la valeur de la barre de recherche appareils et l'envoie à la factory
+ * handleAppareilSearchFilter - capture la valeur passée dans la barre de recherche appareils et l'envoie à la factory
  */
 const handleAppareilSearchFilter = () => {
     const equipmentSearchFilter = document.querySelector('.equipmentFieldSpan');
@@ -334,7 +331,7 @@ const handleAppareilSearchFilter = () => {
             addTagAppareil();
         } else {
             initListAppareils();
-        }j
+        }
     });
 };
 
