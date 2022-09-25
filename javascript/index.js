@@ -206,6 +206,8 @@ const handleDivList = () => {
                     element.style.filter = 'brightness(95%)';
                     element.querySelector('.fa-chevron-up').style.transform = 'rotate(0deg)';
                     element.querySelector('div').style.display = 'grid';
+                    element.querySelector('div').style.gridTemplateColumns = '1fr 1fr 1fr';
+
                 } else {
                     closeDivList(element);
                 }
