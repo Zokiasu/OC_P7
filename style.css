@@ -109,7 +109,7 @@ main > header > aside > #tagList > div > .tagIngredient {
   background: #3282F7;
 }
 
-main > header > aside > #tagList > div > .tagAppareil {
+main > header > aside > #tagList > div > .tagEquipment {
   background: #68D9A4;
 }
 
@@ -154,7 +154,7 @@ main > header > aside > .listField > span > input::placeholder {
 
 main > header > aside > .listField .fa-chevron-up {
   transform: rotate(180deg);
-  margin-left: auto;
+  padding-right: 1rem;
   cursor: pointer;
   transition: all 0.4s;
 }
@@ -199,18 +199,18 @@ main > header > aside > #ingredientField > #ingredientList > span:focus {
   color: #0050c9;
 }
 
-main > header > aside > #appareilField {
+main > header > aside > #equipmentField {
   background: #68D9A4;
 }
 
-main > header > aside > #appareilField > #appareilList::-webkit-scrollbar-thumb {
+main > header > aside > #equipmentField > #equipmentList::-webkit-scrollbar-thumb {
   background: #469e75;
   border-radius: 5px;
 }
 
-main > header > aside > #appareilField > #appareilList > span:hover, 
-main > header > aside > #appareilField > #appareilList > span:active, 
-main > header > aside > #appareilField > #appareilList > span:focus {
+main > header > aside > #equipmentField > #equipmentList > span:hover, 
+main > header > aside > #equipmentField > #equipmentList > span:active, 
+main > header > aside > #equipmentField > #equipmentList > span:focus {
   color: #3e8f69;
 }
 
