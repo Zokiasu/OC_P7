@@ -178,7 +178,7 @@ const handleDivList = () => {
     
     arrayEvent.forEach(event => {
         [divIngredient, divAppareil, divUstensile].forEach(element => {
-            element.addEventListener(event, () => {
+            element.querySelector('.fa-chevron-up').addEventListener(event, () => {
                 if(element.style.width === '87px') {
                     // On ferme tous les listField
                     for (let i = 0; i < 3; i++) {
@@ -205,7 +205,7 @@ const handleDivList = () => {
                     }
                     element.style.filter = 'brightness(95%)';
                     element.querySelector('.fa-chevron-up').style.transform = 'rotate(0deg)';
-                    element.querySelector('div').style.display = 'flex';
+                    element.querySelector('div').style.display = 'grid';
                 } else {
                     closeDivList(element);
                 }

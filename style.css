@@ -165,10 +165,10 @@ main > header > aside > .listField > .list {
   width: 100%;
   height: 90%;
   margin-top: 1.5em;
-  flex-wrap: wrap;
-  align-content: space-between;
-  flex-direction: column;
   transition: all 0.3s;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5em;
 }
 
 main > header > aside > .listField > .list::-webkit-scrollbar {
@@ -186,6 +186,7 @@ main > header > aside > .listField > .list > span {
 
 main > header > aside > #ingredientField {
   background: #3282F7;
+  max-width: 500px;
 }
 
 main > header > aside > #ingredientField > #ingredientList::-webkit-scrollbar-thumb {
