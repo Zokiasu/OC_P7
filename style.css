@@ -132,6 +132,8 @@ main > header > aside > .listField {
   color: white;
   border-radius: 3px;
   max-width: 500px;
+  width: 87px;
+  height: 19.7px;
 }
 
 main > header > aside > .listField > span > input {
