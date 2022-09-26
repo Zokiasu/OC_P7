@@ -207,11 +207,11 @@ const factories = () => {
 	**/
 	const recipesSearch = (search) => {
 		return recipeArray.filter((recette) => { //On réalise un parcours unique de la boucle principal en appliquant un filtre
-			return recette.name.toLowerCase().includes(search.toLowerCase()) || // Si la recherche correspond au nom de la recette on l'ajoute au tableau
-			recette.ingredients.filter((ingredient) => ingredient.ingredient.toLowerCase().includes(search.toLowerCase())).length > 0 ||  // Si la recherche correspond à un ingrédient de la recette on l'ajoute au tableau
-			recette.ustensils.filter((ustensil) => ustensil.toLowerCase().includes(search.toLowerCase())).length > 0 || // Si la recherche correspond à un ustensil de la recette on l'ajoute au tableau
-			recette.description.toLowerCase().includes(search.toLowerCase()) || // Si la recherche correspond à la description de la recette on l'ajoute au tableau
-			recette.appliance.toLowerCase().includes(search.toLowerCase()); // Si la recherche correspond à l'appareil de la recette on l'ajoute au tableau
+			return recette.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) || // Si la recherche correspond au nom de la recette on l'ajoute au tableau
+			recette.ingredients.filter((ingredient) => ingredient.ingredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))).length > 0 ||  // Si la recherche correspond à un ingrédient de la recette on l'ajoute au tableau
+			recette.ustensils.filter((ustensil) => ustensil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))).length > 0 || // Si la recherche correspond à un ustensil de la recette on l'ajoute au tableau
+			recette.description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")) || // Si la recherche correspond à la description de la recette on l'ajoute au tableau
+			recette.appliance.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")); // Si la recherche correspond à l'appareil de la recette on l'ajoute au tableau
 		});
 	};
 	
@@ -221,7 +221,7 @@ const factories = () => {
 	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const ingredientSearchFilter = (search) => {
-		return ingredientArray.filter((ingredient) => ingredient.toLowerCase().includes(search.toLowerCase()));
+		return ingredientArray.filter((ingredient) => ingredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
 	};
 
 	/**
@@ -231,7 +231,7 @@ const factories = () => {
 	 * @returns {Array} renvoie un tableau contenant les recettes filtrés avec l'ingredient choisi
 	 */
 	const recipeFilteredByIngredients = (array, tagIngredient) => {
-		return array.filter((array) => array.ingredients.filter((ingredient) => ingredient.ingredient.toLowerCase().includes(tagIngredient.toLowerCase())).length > 0);
+		return array.filter((array) => array.ingredients.filter((ingredient) => ingredient.ingredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(tagIngredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))).length > 0);
 	};
 	
 	/**
@@ -240,7 +240,7 @@ const factories = () => {
 	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const equipmentSearchFilter = (search) => {
-		return equipmentArray.filter((equipment) => equipment.toLowerCase().includes(search.toLowerCase()));
+		return equipmentArray.filter((equipment) => equipment.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
 	};
 	
 	/**
@@ -250,7 +250,7 @@ const factories = () => {
 	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const recipeFilteredByAppareil = (array, tagAppareil) => {
-		return array.filter((array) => array.appliance.toLowerCase().includes(tagAppareil.toLowerCase()));
+		return array.filter((array) => array.appliance.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(tagAppareil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
 	};
 	
 	/**
@@ -259,7 +259,7 @@ const factories = () => {
 	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const ustensilSearchFilter = (search) => {
-		return ustensilArray.filter((ustensil) => ustensil.toLowerCase().includes(search.toLowerCase()));
+		return ustensilArray.filter((ustensil) => ustensil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
 	};
 
 	/**
@@ -269,7 +269,7 @@ const factories = () => {
 	 * @returns {Array} renvoie un tableau contenant les résultats filtrés
 	 */
 	const recipeFilteredByUstensil = (array, tagUstensil) => {
-		return array.filter((array) => array.ustensils.filter((ustensil) => ustensil.toLowerCase().includes(tagUstensil.toLowerCase())).length > 0);
+		return array.filter((array) => array.ustensils.filter((ustensil) => ustensil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(tagUstensil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))).length > 0);
 	};
 	
 	return {
