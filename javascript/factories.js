@@ -207,15 +207,15 @@ const factories = () => {
 	const recipesSearch = (search) => {
 		let resultSearch = [];
 		for (let i = 0; i < arrayRecettes.length; i++) {
-			if (arrayRecettes[i].name.toLowerCase().includes(search)) {
+			if (arrayRecettes[i].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
 				resultSearch.push(arrayRecettes[i]);
 			}
 			for (let y = 0; y < arrayRecettes[i].ingredients.length; y++) {
-				if (arrayRecettes[i].ingredients[y].ingredient.toLowerCase().includes(search)) {
+				if (arrayRecettes[i].ingredients[y].ingredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
 					resultSearch.push(arrayRecettes[i]);
 				}
 			}
-			if (arrayRecettes[i].description.toLowerCase().includes(search)) {
+			if (arrayRecettes[i].description.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
 				resultSearch.push(arrayRecettes[i]);
 			}
 		}
@@ -230,7 +230,7 @@ const factories = () => {
 	const ingredientSearchFilter = (search) => {
 		let resultSearch = [];
 		for (let i = 0; i < arrayIngredients.length; i++) {
-			if (arrayIngredients[i].toLowerCase().includes(search)) resultSearch.push(arrayIngredients[i]);
+			if (arrayIngredients[i].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) resultSearch.push(arrayIngredients[i]);
 		}
 		return resultSearch;
 	};
@@ -245,7 +245,7 @@ const factories = () => {
 		let resultSearch = [];
 		for (let i = 0; i < array.length; i++) {
 			for (let y = 0; y < array[i].ingredients.length; y++) {
-				if (array[i].ingredients[y].ingredient.toLowerCase().includes(tagIngredient)) resultSearch.push(array[i]);
+				if (array[i].ingredients[y].ingredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(tagIngredient.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) resultSearch.push(array[i]);
 			}
 		}
 		return resultSearch;
@@ -259,7 +259,7 @@ const factories = () => {
 	const appareilSearchFilter = (search) => {
 		let resultSearch = [];
 		for (let i = 0; i < arrayAppareils.length; i++) {
-			if (arrayAppareils[i].toLowerCase().includes(search)) resultSearch.push(arrayAppareils[i]);
+			if (arrayAppareils[i].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) resultSearch.push(arrayAppareils[i]);
 		}
 		return resultSearch;
 	};
@@ -273,7 +273,7 @@ const factories = () => {
 	const recipeFilteredByAppareil = (array, tagAppareil) => {
 		let resultSearch = [];
 		for (let i = 0; i < array.length; i++) {
-			if (array[i].appliance.toLowerCase().includes(tagAppareil)) resultSearch.push(array[i]);
+			if (array[i].appliance.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(tagAppareil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) resultSearch.push(array[i]);
 		}
 		return resultSearch;
 	};
@@ -286,7 +286,7 @@ const factories = () => {
 	const ustensilSearchFilter = (search) => {
 		let resultSearch = [];
 		for (let i = 0; i < arrayUstensils.length; i++) {
-			if (arrayUstensils[i].toLowerCase().includes(search)) resultSearch.push(arrayUstensils[i]);
+			if (arrayUstensils[i].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(search.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) resultSearch.push(arrayUstensils[i]);
 		}
 		return resultSearch;
 	};
@@ -301,7 +301,7 @@ const factories = () => {
 		let resultSearch = [];
 		for (let i = 0; i < array.length; i++) {
 			for (let y = 0; y < array[i].ustensils.length; y++) {
-				if (array[i].ustensils[y].toLowerCase().includes(tagUstensil)) resultSearch.push(array[i]);
+				if (array[i].ustensils[y].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(tagUstensil.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) resultSearch.push(array[i]);
 			}
 		}
 		return resultSearch;
